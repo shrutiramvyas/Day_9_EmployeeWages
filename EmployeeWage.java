@@ -1,10 +1,9 @@
 class ClassEmployee {
     public static final int part_time = 1;
     public static final int full_time = 2;
-    public static final int emp_rate_per_hour = 20;
-    public static final int no_of_working_days = 20;
-    public static final int max_hour_in_month = 10;
-    public int calc(){
+
+    public int calc(int max_hour_in_month, int no_of_working_days,int emp_rate_per_hour){
+        System.out.println(max_hour_in_month+"  "+ no_of_working_days+"  "+ emp_rate_per_hour);
         int emp_hours = 0, total_emp_hrs = 0, total_working_days = 0;
         while(total_emp_hrs <= max_hour_in_month && total_working_days < no_of_working_days) {
             total_working_days++;
@@ -20,7 +19,7 @@ class ClassEmployee {
                     emp_hours = 0;
             }
             total_emp_hrs += emp_hours;
-            System.out.println("Day" + total_working_days + " Emp Hr: " + emp_hours);
+            System.out.println("Day " + total_working_days + " Emp Hr: " + emp_hours);
         }
         int totalEmpWages=total_emp_hrs*emp_rate_per_hour;
         return totalEmpWages;
@@ -30,7 +29,9 @@ class ClassEmployee {
 class Main{
     public static void main(String[] args) {
         ClassEmployee emp =new ClassEmployee();
-        System.out.println("Total wages of employee is: " + emp.calc());
+        System.out.println("Total wages of Audi's employee is: " + emp.calc(30,3,30));
+        System.out.println("=================================================================");
+        System.out.println("Total wages of TATA employee is: " + emp.calc(20,2,15));
 
     }
 }
